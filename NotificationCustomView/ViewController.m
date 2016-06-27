@@ -57,7 +57,7 @@
     NSLog(@"Swiped Down");
     
     
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:.7 animations:^{
     CGRect f = notificationView.frame;
     f.origin.y = 0;
     notificationView.frame = f;
@@ -69,7 +69,7 @@
 -(void) swipeUp:(UIGestureRecognizer *)recognizer {
     NSLog(@"Swiped Up");
     
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:.7 animations:^{
     CGRect f = notificationView.frame;
     f.origin.y = -800;
     notificationView.frame = f;
