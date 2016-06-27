@@ -26,10 +26,12 @@
     
 //    Notification View
     notificationView = [[UIView alloc] initWithFrame:CGRectMake(0, -800, self.view.frame.size.width, self.view.frame.size.height)];
-    notificationView.backgroundColor = [UIColor redColor];
+    notificationView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cat.jpg"]];
     
     [self.view addSubview:notificationView];
 
+    
+    
     // swipe down
     UISwipeGestureRecognizer *swipeDownGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDown:)];
     
