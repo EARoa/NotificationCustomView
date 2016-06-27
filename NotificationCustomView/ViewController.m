@@ -14,10 +14,18 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIView *notificationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//    First View
+    UIView *firstView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    firstView.backgroundColor = [UIColor blueColor];
+    
+    [self.view addSubview:firstView];
+    
+//    Notification View
+    notificationView = [[UIView alloc] initWithFrame:CGRectMake(0, -800, self.view.frame.size.width, self.view.frame.size.height)];
     notificationView.backgroundColor = [UIColor redColor];
     
     [self.view addSubview:notificationView];
@@ -27,7 +35,7 @@
     
     swipeDownGestureRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
     
-    [notificationView addGestureRecognizer:swipeDownGestureRecognizer];
+    [firstView addGestureRecognizer:swipeDownGestureRecognizer];
     
     
     // swipe up
@@ -47,11 +55,29 @@
 
 -(void) swipeDown:(UIGestureRecognizer *)recognizer {
     NSLog(@"Swiped Down");
+    
+    
+    [UIView animateWithDuration:1.0 animations:^{
+    CGRect f = notificationView.frame;
+    f.origin.y = 0;
+    notificationView.frame = f;
+    }
+     ];
 }
-
+    
+    
 -(void) swipeUp:(UIGestureRecognizer *)recognizer {
     NSLog(@"Swiped Up");
+    
+    [UIView animateWithDuration:1.0 animations:^{
+    CGRect f = notificationView.frame;
+    f.origin.y = -800;
+    notificationView.frame = f;
+    }];
+
+    
 }
+
 
 
 - (void)didReceiveMemoryWarning {
