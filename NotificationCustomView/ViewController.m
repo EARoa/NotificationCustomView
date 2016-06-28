@@ -20,15 +20,25 @@
     
 //    First View
     UIView *firstView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    firstView.backgroundColor = [UIColor blueColor];
+    firstView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cat.jpg"]];
     
     [self.view addSubview:firstView];
     
 //    Notification View
     notificationView = [[UIView alloc] initWithFrame:CGRectMake(0, -800, self.view.frame.size.width, self.view.frame.size.height)];
-    notificationView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cat.jpg"]];
-    
+    notificationView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:notificationView];
+    
+    
+//    Dark View
+    notificationViewBlur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    bluredView = [[UIVisualEffectView alloc] initWithEffect:notificationViewBlur];
+    bluredView.frame = self.view.bounds;
+    [notificationView addSubview:bluredView];
+    
+    
+    
+    
 
     
     

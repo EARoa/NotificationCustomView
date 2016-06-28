@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController{
     UIView *notificationView;
+    
+    
+    UIBlurEffect *notificationViewBlur;
+    UIVisualEffectView *bluredView;
 }
 
 
